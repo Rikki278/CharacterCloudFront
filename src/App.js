@@ -1,24 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import HomePage from "./pages/homePage";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getFetchData } from "./store/userActions";
+import { actions } from "./store/userSlice";
+import { Route, Routes } from "react-router-dom";
+import { Login } from "./pages/login";
+import Header from "./components/header/header";
+import { selectIsAuth } from "./store/userSlice";
+import { Register } from "./pages/Register/register";
 
 function App() {
+    // const dispatch = useDispatch()
+    // const isAuth = useSelector(state => state.userAccount.status)
+    // const userAccount = useSelector(state => state.userAccount.user)
+    // let userId = isAuth ? userAccount.id : 0
+    // console.log(userId,isAuth)
+    //
+    // const url = `http://localhost:8080/anime/user/${userId}/anime-title`
+    //
+    // useEffect(()=>{
+    //     // if (userFromLocalStorage){
+    //     //     dispatch(actions.changeStatus())
+    //     //     dispatch(actions.changeStatus())
+    //     // }
+    //     dispatch(getFetchData(url))
+    //
+    // },[isAuth])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+        <Header/>
+        <Routes>
+            <Route path = {'/'} element={<Login/>}/>
+            <Route path = {'/register'} element={<Register/>}/>
+            <Route path = {'/home'} element={<HomePage/>}/>
+        </Routes>
+    </>
   );
 }
 
