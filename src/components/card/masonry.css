@@ -1,0 +1,18 @@
+.my-masonry-grid {
+    display: flex;
+    margin-left: -15px; /* Adjust margin as needed */
+    width: auto;
+}
+
+.my-masonry-grid_column {
+    padding-left: 15px; /* Adjust padding as needed */
+    background-clip: padding-box;
+}
+
+.card {
+    margin-bottom: 15px; /* Adjust margin as needed */
+    background-color: #f5f5f5; /* Card background color */
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* Card shadow */
+    padding: 15px;
+}

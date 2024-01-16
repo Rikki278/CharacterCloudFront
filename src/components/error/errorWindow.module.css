@@ -1,0 +1,17 @@
+.error-window {
+    width: 100%;
+    text-align: center;
+    background-color: #ffcccc;
+    padding: 20px;
+    border: 1px solid #ff9999;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.error-window h2 {
+    color: #cc0000;
+}
+
+.error-window p {
+    color: #660000;
+}

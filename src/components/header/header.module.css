@@ -1,0 +1,93 @@
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/02ae25c6-c40d-46d5-b9f0-dbb26200cde4/ddpixwl-4fc7214d-9e91-4b3b-92ec-d2e84140ad37.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzAyYWUyNWM2LWM0MGQtNDZkNS1iOWYwLWRiYjI2MjAwY2RlNFwvZGRwaXh3bC00ZmM3MjE0ZC05ZTkxLTRiM2ItOTJlYy1kMmU4NDE0MGFkMzcuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0._F9lOpIrksv-F_alNPABUKgBKIeXWRk1sAqjVwGS7rg'); /* Replace 'path/to/your/image.jpg' with your image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 -70px;
+    color: white;
+}
+
+.leftSide {
+    display: flex;
+    align-items: center;
+}
+
+.leftSide h1 {
+    margin-right: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.rightSide {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.MuiButton-root {
+    background-color: #2196f3;
+    color: white;
+    margin-left: 10px;
+}
+
+.MuiButton-root:hover {
+    background-color: #1976d2;
+}
+
+.MuiFilledInput-root {
+    margin-left: 10px;
+}
+
+.MuiInputLabel-root {
+    color: #f44336;
+}
+
+.MuiInputBase-input {
+    color: #333;
+}
+
+/*.avatar-container {*/
+/*    width: 50px; !* Ширина блока *!*/
+/*    height: 50px; !* Высота блока *!*/
+/*    border-radius: 50%; !* Делаем блок круглым *!*/
+/*    overflow: hidden; !* Обрезаем изображение, чтобы оно соответствовало форме круга *!*/
+/*    display: flex; !* Используем flexbox для центрирования *!*/
+/*    justify-content: center; !* Центрируем по горизонтали *!*/
+/*    align-items: center; !* Центрируем по вертикали *!*/
+/*}*/
+
+/*.avatar-container img {*/
+/*    width: 100%; !* Ширина изображения 100% блока *!*/
+/*    height: auto; !* Автоматическая высота для сохранения пропорций *!*/
+/*    object-fit: cover; !* Изображение заполняет блок без изменения пропорций *!*/
+/*}*/
+
+.avatar-wrapper {
+    display: flex;
+    /*flex-direction: column;*/
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    gap: 20px;
+}
+
+.avatar-container {
+    width: 50px; /* Ширина блока */
+    height: 50px; /* Высота блока */
+    border-radius: 50%; /* Делаем блок круглым */
+    overflow: hidden; /* Обрезаем изображение, чтобы оно соответствовало форме круга */
+    margin-bottom: 10px; /* Отступ между изображением и кнопкой */
+}
+
+.avatar-container img {
+    width: 100%; /* Ширина изображения 100% блока */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    object-fit: cover; /* Изображение заполняет блок без изменения пропорций */
+}
+
+
+

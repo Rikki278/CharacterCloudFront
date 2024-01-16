@@ -1,0 +1,68 @@
+.form-popup {
+    max-height: 100%;
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:  #ffffff;
+    /*padding: 20px;*/
+    border: 0 solid #ccc;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    overflow-y:auto ;
+    overflow-x: hidden;
+
+}
+
+.form-container {
+    padding: 20px;
+    width: 300px;
+
+}
+.form-container h2{
+    margin: 0 0 20px;
+}
+.active{
+    position: absolute;
+    top: 25px;
+    left: 5px;
+    margin: 0 0 20px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-container input[type='text'],
+.form-container textarea {
+    content: none;
+}
+.form-container textarea{
+    height: 80px;
+    resize: none;
+    content: none;
+}
+
+input:required::after {
+    content: none; /* скрыть звездочку */
+    /* или применить другие стили, чтобы изменить вид звездочки */
+}
+.muiTextArea{
+    content: none;
+}
+
+.card-image {
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    display: block;
+    width: 340px;
+   border-radius: 10px 10px 0 0;
+}
+
+
