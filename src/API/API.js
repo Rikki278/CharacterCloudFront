@@ -1,82 +1,93 @@
-const url = 'http://localhost:8080/anime'
+import axios from "../axios";
+
 export default {
-    addNewAnimeCharacter: async (characterData) => {
-
+    getAnimeCharactersByUserId: async (userId) => {
         try {
-            const response = await fetch(`${url}/add`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    // Другие необходимые заголовки...
-                },
-                body: JSON.stringify(characterData)
-            });
+            console.log(userId)
+            const response = await axios.get(`/anime/user/${userId}/anime-title`)
 
-            if (!response.ok) {
-                throw new Error(`Ошибка сети: ${response.status}`);
-            }
-
-            const data = await response.json();
-            console.log('Пользователь успешно добавлен:', data);
-
-            // Вернуть данные, чтобы их можно было использовать вне этой функции
-            return data;
+            console.log('User added successfully:', response);
+            return response.data;
         } catch (error) {
-            console.error('Ошибка при добавлении пользователя:', error);
+            console.error('Error adding user:', error);
             // Обработка ошибки
-
-            // Вернуть null (или другое значение) в случае ошибки, если нужно
             return null;
         }
     },
-    deleteCharacter: (id)=>{
-
-        fetch(`${url}/delete/${id}`, {
-            method: 'DELETE', // Метод запроса для удаления
-            headers: {
-                'Content-Type': 'application/json',
-                // Другие необходимые заголовки...
-            },
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Ошибка сети: ${response.status}`);
-                }
-                console.log('Пользователь успешно удален');
-                // Обработка успешного удаления пользователя
-            })
-            .catch(error => {
-                console.error('Ошибка при удалении пользователя:', error);
-                // Обработка ошибки
-            });
-    },
-    updateAnimeCharacterById: async (id, updatedData) => {
+    getAllAnimeCharacters: async (userId) => {
         try {
-            const response = await fetch(`${url}/update/${id}`, {
-                method: 'PUT', // Используем метод PUT для обновления данных
-                headers: {
-                    'Content-Type': 'application/json',
-                    // Другие необходимые заголовки...
-                },
-                body: JSON.stringify(updatedData)
-            });
+            console.log(userId)
+            const response = await axios.get(`anime/all`)
 
-            if (!response.ok) {
-                throw new Error(`Ошибка сети: ${response.status}`);
-            }
-
-            const data = await response.json();
-            console.log('Пользователь успешно обновлен:', data);
-
-            // Вернуть данные, чтобы их можно было использовать вне этой функции
-            return data;
+            console.log('Character added successfully:', response);
+            return response.data;
         } catch (error) {
-            console.error('Ошибка при обновлении пользователя:', error);
+            console.error('Error adding user:', error);
+            // Обработка ошибки
+            return null;
+        }
+    },
+    addNewAnimeCharacter: async (characterData) => {
+        try {
+            const response = await axios.post(`/anime/add`, characterData)
+
+            console.log('User added successfully:', response.data);
+            return response.data;
+        } catch (error) {
+            console.error('Error adding user:', error);
+            // Обработка ошибки
+            return null;
+        }
+    },
+    deleteCharacter: async (id) => {
+        try {
+            const response = await axios.delete(`anime/delete/${id}`, )
+
+            console.log('User deleted successfully');
+            // Обработка успешного удаления пользователя
+            return true;
+        } catch (error) {
+            console.error('Error when deleting user:', error);
             // Обработка ошибки
 
-            // Вернуть null (или другое значение) в случае ошибки, если нужно
+            return false;
+        }
+    },
+    updateAnimeCharacterById : async (id, updatedData) => {
+        try { //айди поста
+            const response = await axios.put(`/anime/update/${id}`, updatedData)
+
+            console.log('User updated successfully:', response.data);
+            return response.data;
+        } catch (error) {
+            console.error('Error updating user:', error);
+            // Обработка ошибки
+
+            return null;
+        }
+    },
+    loginUser : async (values) =>{
+        try {
+            const response = await axios.post('/auth/login', values)
+            console.log(response)
+
+            return response.data;
+        } catch (error) {
+            console.error('Error updating user:', error);
+
+            return null;
+        }
+    },
+    registerUser : async (values) =>{
+        try {
+            const response = await axios.post('/auth/register', values)
+
+            console.log('The user has successfully registered in:', response.data);
+            return response.data;
+        } catch (error) {
+            console.error('Error register user:', error);
+            // Обработка ошибки
             return null;
         }
     }
-
 }
